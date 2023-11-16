@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
+import revelationSound from "./sounds/mix_07s.mp3";
+const voice = new Audio(revelationSound);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [revealed, setRevealed] = useState('');
+    const [words, setWords] = useState('Are you ready for the truth?');
+    function revealTruth() {
+        voice.play();
+        setRevealed('reveal');
+        setTimeout(() => {
+            setWords('You just found the best web developer for the job');
+        }, 4000);
+    }
+    return (
+        <div className="container">
+            <div className="glass-circle">
+                <div>
+                    <h3 className={revealed}>{words}</h3>
+                </div>
+                {revealed === '' && <button className="mystic-btn" onClick={revealTruth}>Reveal</button>}
+            </div>
+        </div>
+    );
 }
 
 export default App;

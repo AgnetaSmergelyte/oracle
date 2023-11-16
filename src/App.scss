@@ -22,32 +22,34 @@
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 3px solid;
-  border-color: rgba(78, 78, 210, 0.5) rgba(99, 99, 222, 0.5) rgba(85, 85, 183, 0.5) rgba(78, 78, 176, 0.5);
+  border-color: rgb(78, 78, 210, 0.5) rgba(99, 99, 222, 0.5) rgba(85, 85, 183, 0.5) rgba(78, 78, 176, 0.5);
   animation: spin-border linear 20s infinite;
   color: rgb(78, 78, 210);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.glass-circle > div {
-  animation: spin-content linear 20s infinite;
-  text-align: center;
+
+  & > div {
+    animation: spin-content linear 20s infinite;
+    text-align: center;
+  }
 }
 
 .mystic-btn {
   cursor: pointer;
-  background-color: rgba(78, 78, 210, 0.5);
+  background-color: rgb(78, 78, 210, 0.5);
   border: none;
   border-radius: 50%;
   color: #d3cbcb;
   padding: 1rem 1.2rem;
   transition: all 0.3s ease;
-  font-family: "Glass Antiqua", cursive;
+  font-family: 'Glass Antiqua', cursive;
   font-size: 1.2rem;
-}
-.mystic-btn:hover {
-  background-color: rgba(78, 78, 210, 0.8);
-  transform: scale(1.05);
+
+  &:hover {
+    background-color: rgb(78, 78, 210, 0.8);
+    transform: scale(1.05);
+  }
 }
 
 .reveal {
@@ -59,11 +61,13 @@
     transform: rotate(360deg);
   }
 }
+
 @keyframes spin-content {
   100% {
     transform: rotate(-360deg);
   }
 }
+
 @keyframes spin-more {
   0% {
     transform: rotate(0deg);
@@ -84,12 +88,14 @@
     transform: rotate(360deg);
   }
 }
+
 @media (min-width: 350px) {
   .glass-circle {
     width: 300px;
     height: 300px;
   }
 }
+
 @media (min-width: 500px) {
   .glass-circle {
     width: 400px;
@@ -97,6 +103,7 @@
     font-size: 1.4rem;
   }
 }
+
 @media (min-width: 1200px) {
   .glass-circle {
     width: 500px;
@@ -104,5 +111,3 @@
     font-size: 1.7rem;
   }
 }
-
-/*# sourceMappingURL=App.css.map */
