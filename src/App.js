@@ -11,7 +11,7 @@ function App() {
         setRevealed('reveal');
         setTimeout(() => {
             setWords('You just found the best web developer for the job');
-        }, 4000);
+        }, 3500);
     }
     return (
         <div className="container">
