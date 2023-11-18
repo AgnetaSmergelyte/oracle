@@ -7,19 +7,23 @@ function App() {
     const [revealed, setRevealed] = useState('');
     const [words, setWords] = useState('Are you ready for the truth?');
     function revealTruth() {
-        voice.play();
-        setRevealed('reveal');
-        setTimeout(() => {
-            setWords('You just found the best web developer for the job');
-        }, 3500);
+        if (revealed === '') {
+            voice.play();
+            setRevealed('reveal');
+            setTimeout(() => {
+                setWords('You just found the best web developer for the job');
+            }, 3500);
+        } else {
+            window.location.href = 'https://www.agnetasmergelyte.lt/';
+        }
     }
     return (
         <div className="container">
-            <div className="glass-circle">
+            <div className="glass-circle" onClick={revealTruth}>
                 <div>
                     <h3 className={revealed}>{words}</h3>
                 </div>
-                {revealed === '' && <button className="mystic-btn" onClick={revealTruth}>Reveal</button>}
+                {revealed === '' && <button className="mystic-btn">Reveal</button>}
             </div>
         </div>
     );
